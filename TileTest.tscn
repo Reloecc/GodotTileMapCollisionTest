@@ -5,12 +5,12 @@
 [ext_resource path="res://icon.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+extents = Vector2( 21.163, 31.7505 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-position = Vector2( 130.26, 50.4055 )
+position = Vector2( 129.593, 26.3784 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -25,4 +25,20 @@ texture = ExtResource( 3 )
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 65537, 0, 0 )
+tile_data = PoolIntArray( 65537, 0, 0, 65538, 0, 0, 65539, 0, 0 )
+
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Positions"]
+modulate = Color( 0.729412, 0.192157, 0.192157, 1 )
+scale = Vector2( 0.0770831, 0.0562264 )
+z_index = 20
+z_as_relative = false
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="Positions"]
+modulate = Color( 0.729412, 0.192157, 0.192157, 1 )
+scale = Vector2( 0.0770831, 0.0562264 )
+z_index = 20
+z_as_relative = false
+texture = ExtResource( 3 )

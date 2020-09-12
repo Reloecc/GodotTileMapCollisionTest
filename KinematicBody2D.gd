@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+onready var parent :Node2D = get_parent()
+onready var colpos :Node2D = parent.get_node('Positions')
+
 var velocity = Vector2.ZERO
 
 func _physics_process(_delta):
@@ -18,6 +21,9 @@ func _physics_process(_delta):
 		var collision = get_slide_collision(i)
 
 		if collision.collider is TileMap:
-			var cell = collision.collider.world_to_map(collision.position - collision.normal)
+			colpos.get_child(i).position = collision.position
+			
+			var cell = collision.collider.world_to_map(collision.position)
 			var tileId = collision.collider.get_cellv(cell)
-			print("tileId ", tileId)
+
+			print("i: %d; tile: %s " % [i, cell])
